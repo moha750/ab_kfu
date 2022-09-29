@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>نادي أدِيب</title>
+  <link rel="stylesheet" href="https://use.typekit.net/tsl0qfs.css"><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'><link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div id="wrapper">
+  <div id="container">
+    
+    <div class="information-column">
+      <div class="content">
+        <center><img class="logo" src="logo.png"/></center>
+
+        <center><h1>أهلاً بالمُبدع/ بالمُبدعه يرجى أختيار الرغبة التي تجد نفسك بها</h1></center>
+        <p>ملاحظة/ يمكنك أختيار رغبتين كحد أقصى</p>
+      </div>
+    </div>
+    
+    <div class="form-column">
+      
+      <div class="subscribtion free">
+          <center><h2>لجنة التصميم والمونتاج</h2></center>
+          <center><p>يقوم فيها العضو بـتصميم منشورات النادي وأنشطته، ومونتاج وتعديل الفيديوات وإخراجها</p></center>
+      </div>
+
+      <div class="subscribtion family">
+          <center><h2>لجنة التصوير والإعلام الرقمي</h2></center>
+          <center><p>يقوم فيها العضو بـتصوير الأنشطة والفعاليات التابعة للنادي، ونشرها وتفعيلها في مواقع التواصل الاجتماعي</p></center>
+      </div>
+
+      <div class="subscribtion premium">
+          <center><h2>لجنة صناعة المحتوى</h2></center>
+          <center><p>يقوم فيها العضو بـكتابة المحتوى وإعداده وتدقيقه ومراجعته، وطرح ملاحظاته فيها</p></center>
+      </div>
+      
+     <form name="send" id="send" class="form" method="post" action="https://script.google.com/macros/s/AKfycbwZPa3yims6b3SeWtza8eUEDh4bD3exQ8cxpLOH_M4dPaDe9PHpLIqbo5Cm2kefMvI/exec">
+        
+        <label>الأسم</label>
+        <input type="name" placeholder="أكتب أسمك هنا" id="name" name="الأسم" required="required">
+<h1>يرجى تأكيد الرغبة</h1>
+        <div class="middle">
+          
+          <label>
+          <input type="radio" name="رغبة الانضمام" value="تصميم ومونتاج" required>
+          <div class="front-end box">
+            <span>التصميم والمونتاج</span>
+          </div>
+        </label>
+        
+          <label>
+          <input type="radio" name="رغبة الانضمام" value="التصوير والإعلام الرقمي" required>
+          <div class="back-end box">
+            <span>التصوير والإعلام الرقمي</span>
+          </div>
+        </label>
+
+        <label>
+          <input type="radio" name="رغبة الانضمام" value="صناعة المحتوى" required>
+          <div class="back-end box">
+            <span>صناعة المحتوى</span>
+          </div>
+        </label>
+        </div>
+
+      <button onclick="sweetalertclick()"  class="next free-form btn">انضمام للجنه</button>
+
+      </form>
+
+    </div>
+    
+  </div>
+  <div class="more"><a href="index1.html">..لرؤية باقي الرغبات</a></div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="script.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwZPa3yims6b3SeWtza8eUEDh4bD3exQ8cxpLOH_M4dPaDe9PHpLIqbo5Cm2kefMvI/exec'
+    const form = document.forms['send']
+    
+    form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          Swal.fire({
+  title: '!تم تسجيلك في الرغبة المذكورة',
+  text: "يمكنك أختيار رغبة أخرى واحدة فقط في حال رغبتك",
+  icon: 'success',
+  confirmButtonColor: '#0051b2',
+  confirmButtonText: 'تم'
+})
+        })
+      </script>
+
+      <script>
+        function sweetalertclick(){
+        Swal.fire({
+  icon: 'error',
+  title: '!يرجى ملئ جميع الحقول',
+  text: 'تأكيد من كتب الأسم أو أختيار تأكيد الرغبة',
+  confirmButtonColor: '#0051b2',
+})}
+      </script>
+
+  
+</body>
+</html>
